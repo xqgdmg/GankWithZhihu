@@ -171,11 +171,6 @@ public class TopStoriesViewPager extends RelativeLayout {
 		}
 	}
 
-	public int getResourceId(String resourceName) {
-		return context.getResources().getIdentifier(resourceName,
-				"drawable", context.getPackageName());
-	}
-
 	public class MyPagerAdapter extends PagerAdapter{
 		
 

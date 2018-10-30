@@ -48,7 +48,7 @@ public class OkHttpManager {
                                     .removeHeader("Pragma")
                                     .header("Cache-Control", "public ,max-age=" + maxAge)
                                     .build();
-                        } else {
+                        } else { // 在没有网络的情况下，读取缓存
                             int maxStale = 60 * 60 * 24 * 28; // tolerate 4-weeks stale
                             return originalResponse.newBuilder()
                                     .removeHeader("Pragma")

@@ -48,7 +48,7 @@ public abstract class MVPBaseFragment<V, T extends BasePresenter<V>> extends Fra
     }
 
     private void setupSwipeRefresh(View view){
-        mRefreshLayout = view.findViewById(R.id.swipe_refresh);
+        mRefreshLayout = view.findViewById(R.id.swipe_refresh); // 这里要求所有的刷新控件都能只能用这个命名
         if(mRefreshLayout != null){
             mRefreshLayout.setColorSchemeResources(R.color.refresh_progress_1,
                     R.color.refresh_progress_2,R.color.refresh_progress_3);

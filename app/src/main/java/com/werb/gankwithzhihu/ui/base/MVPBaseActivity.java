@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
 
@@ -38,7 +39,7 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
         setContentView(provideContentViewId());//布局
         ButterKnife.bind(this);
 
-        mAppBar = findViewById(R.id.app_bar_layout);
+        mAppBar = findViewById(R.id.app_bar_layout); // 统一的id命名不同的控件
         mToolbar = findViewById(R.id.toolbar);
         if (mToolbar != null && mAppBar != null) {
             setSupportActionBar(mToolbar); //把Toolbar当做ActionBar给设置
@@ -55,6 +56,8 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
         if (isSetRefresh()) {
             setupSwipeRefresh();
         }
+
+        Log.e("chris","ActivityName==" + getClass().getSimpleName());
     }
 
     private void setupSwipeRefresh() {
